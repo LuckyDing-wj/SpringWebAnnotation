@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: SpringWebAnnotation
+  servlet:
+    multipart:
+      location: F://
+logging:
+  level:
+    web: debug
