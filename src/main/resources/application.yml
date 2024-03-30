@@ -4,6 +4,10 @@ spring:
   servlet:
     multipart:
       location: F://
+  mvc:
+    problemdetails:
+      enabled: true
+
 logging:
   level:
     web: debug
