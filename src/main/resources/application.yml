@@ -7,3 +7,15 @@ spring:
 logging:
   level:
     web: debug
+
+product:
+  books:
+    - isbn: B001
+      name: java
+      author: zhangsan
+    - isbn: B002
+      name: python
+      author: lisi
+    - isbn: B003
+      name: javascript
+      author: wangwu

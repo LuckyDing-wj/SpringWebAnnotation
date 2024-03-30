@@ -1,5 +1,8 @@
 package com.example.annotation.handler;
 
+import com.example.annotation.exception.BookNotFoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ProblemDetail;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
@@ -7,6 +10,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,5 +36,14 @@ public class GlobalExceptionHandler {
         map.put("message", "参数绑定失败");
         return map;
     }
+
+    @ExceptionHandler({BookNotFoundException.class})
+    public ProblemDetail handleBookNotFoundException(BookNotFoundException e) {
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, e.getMessage());
+        problemDetail.setTitle("Book Not Found");
+        problemDetail.setType(URI.create("/book/query"));
+        return problemDetail;
+    }
+
 
 }
