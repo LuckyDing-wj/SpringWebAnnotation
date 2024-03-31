@@ -4,6 +4,7 @@ package com.example.annotation.controller;
 import com.example.annotation.config.BookContainer;
 import com.example.annotation.exception.IsbnNotFoundException;
 import com.example.annotation.model.BookRecord;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import java.util.Optional;
 @RestController
 public class BookController {
 
-    @Autowired
+    @Resource
     private BookContainer bookContainer;
 
     @GetMapping("/book/query")
