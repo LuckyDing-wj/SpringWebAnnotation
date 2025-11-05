@@ -3,10 +3,14 @@ spring:
     name: SpringWebAnnotation
   servlet:
     multipart:
-      location: F://
+      location: D://
   mvc:
     problemdetails:
       enabled: true
+  banner:
+    charset: utf-8
+    location: static/banner.txt
+
 
 logging:
   level:

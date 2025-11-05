@@ -1,5 +1,7 @@
 package com.example.annotation;
 
+import jakarta.transaction.Transactional;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +14,9 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 public class SpringWebAnnotationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringWebAnnotationApplication.class, args);
+        SpringApplication application = new SpringApplication(SpringWebAnnotationApplication.class);
+        application.setBannerMode(Banner.Mode.CONSOLE);
+        application.run(args);
     }
 
 }
