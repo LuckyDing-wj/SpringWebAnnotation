@@ -16,7 +16,7 @@ public class DeviceFormatter implements Formatter<DeviceInfo> {
     public DeviceInfo parse(String text, Locale locale) throws ParseException {
         if (StringUtils.hasLength(text)) {
             String[] items = text.split(";");
-            return new DeviceInfo(items[0], items[1], items[2], items[3], items[4]);
+            return new DeviceInfo(items[1], items[2], items[3], items[4], items[0]);
         }
         return null;
     }
